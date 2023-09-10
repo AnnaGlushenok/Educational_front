@@ -1,9 +1,7 @@
 'use client'
-import {SubjectBlock} from "@/components/SubjectBlock";
 import s from "./style.module.css";
 import {useEffect, useState} from "react";
 // import api from "../api.js"
-
 
 export default function Page() {
     let [data, setData] = useState(null);
