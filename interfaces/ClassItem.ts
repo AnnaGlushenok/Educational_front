@@ -1,4 +1,5 @@
 export interface ClassItem {
     id: number,
-    name: string
+    name: string,
+    subjectId: Number
 }

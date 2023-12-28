@@ -1,0 +1,9 @@
+.main {
+    margin: 0 auto;
+    width: min(1170px, 100vw);
+    padding: 50px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}

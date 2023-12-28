@@ -3,12 +3,17 @@
     flex-direction: row;
     justify-content: center;
     height: 60px;
-    background: #00514C;
+    background: var(--main-green);
     padding: 0 1rem;
 }
 
 .navbar * {
-    color: white;
+    color: var(--white);
+}
+
+.menu {
+    display: flex;
+    z-index: 2;
 }
 
 .wrapper {
@@ -26,7 +31,7 @@
     width: 100px;
     height: 30px;
     line-height: 30px;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--white);
     background: transparent;
     font-size: 14px;
     cursor: pointer;
@@ -34,8 +39,8 @@
 }
 
 .enterBtn:hover {
-    background: white;
-    color: #00514C;
+    background: var(--white);
+    color: var(--main-green);
 }
 
 .items {
@@ -48,4 +53,10 @@
 
 .item > a {
     text-decoration: none;
+}
+
+@media screen and (min-width: 0) and (max-width: 320px) {
+    .menu {
+        display: block;
+    }
 }

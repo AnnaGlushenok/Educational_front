@@ -1,6 +1,7 @@
 'use client'
 import s from "./style.module.css";
-import {useEffect, useState} from "react";
+import {useState} from "react";
+import {SubjectBlock} from "@/components/SubjectBlock";
 // import api from "../api.js"
 
 export default function Page() {
@@ -51,9 +52,14 @@ export default function Page() {
 
     return (
         <div className={s.blocks}>
-            {/*{cards.map(c =>*/}
-            {/*    <SubjectBlock id={c.id} title={c.title} img={c.img} imgAlt={c.imgAlt}*/}
-            {/*                  classes={c.classes}/>)}*/}
+            {cards.map(c =>
+                <SubjectBlock
+                    key={c.id}
+                    id={c.id}
+                    title={c.title}
+                    img={c.img}
+                    imgAlt={c.imgAlt}
+                    classes={c.classes}/>)}
         </div>
     );
 }

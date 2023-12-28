@@ -1,0 +1,29 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 270px;
+    width: 270px;
+    background: var(--white);
+    box-shadow: 10px 20px 40px 10px rgba(0, 81, 76, 0.25);
+    padding: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.caption {
+    color: var(--dark-green);
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.img {
+    object-fit: contain;
+    width: 250px;
+    height: 250px;
+}
+
+/*# sourceMappingURL=menu.css.map */
