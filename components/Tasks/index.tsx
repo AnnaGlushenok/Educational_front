@@ -3,7 +3,6 @@ import s from "./style.module.css";
 import {Excercise} from "@/components/Tasks/Excercise";
 import {ExcerciseItem} from "@/interfaces/ExcerciseItem";
 import Image from "next/image";
-import {log} from "node:util";
 
 export default function Tasks(excercises: ExcerciseItem) {
     const [isActive, setIsActive] = useState(false)

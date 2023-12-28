@@ -1,4 +1,21 @@
 .main {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+    width: min(1170px, 100vh);
     padding: 50px 10px;
+}
+
+@media screen and (min-width: 0) and (max-width: 768px) {
+    .main {
+        width: auto;
+        padding: 15px 10px;
+    }
+}
+
+@media screen and (min-width: 0) and (max-width: 460px) {
+    .main {
+        width: auto;
+        padding: 15px 10px;
+    }
 }
