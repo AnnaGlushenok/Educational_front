@@ -2,7 +2,6 @@
 import s from "./style.module.css";
 import {useState} from "react";
 import {SubjectBlock} from "@/components/SubjectBlock";
-import {ClassItem} from "@/interfaces/ClassItem";
 // import api from "../api.js"
 
 export default function Page() {

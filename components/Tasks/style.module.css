@@ -1,0 +1,38 @@
+.main {
+    margin: 0 auto;
+    padding: 50px 10px;
+}
+
+.container__block {
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    cursor: default;
+    align-items: center;
+}
+
+.title__arrow {
+    width: 30px;
+    height: 30px;
+    rotate: 0;
+    transition: 0.5s;
+}
+
+.title__title {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--dark-green);
+    margin: 10px;
+}
+
+.title__active img {
+    transition: 0.5s;
+    rotate: 90deg;
+}

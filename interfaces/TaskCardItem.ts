@@ -1,4 +1,5 @@
 export interface TaskCardItem {
     title: string,
-    image: string
+    image: string,
+    path: string
 }
