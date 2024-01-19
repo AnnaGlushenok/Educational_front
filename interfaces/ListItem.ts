@@ -1,6 +1,6 @@
 import {StringItem} from "@/interfaces/StringItem";
 
-export interface ExcerciseItem {
+export interface ListItem {
     title: string,
-    excercises: StringItem[]
+    list: StringItem[]
 }
