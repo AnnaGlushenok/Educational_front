@@ -12,6 +12,10 @@
     --main-green: #00514C;
     --light-green: #31DE70;
     --dark-green: #002B2B;
+    --red: #52001D;
+    --caption-font-size: 26px;
+    --caption-font-weight: bold;
+    --text-font-size: 20px;
 }
 
 html {
@@ -35,9 +39,9 @@ body {
  * Render the `main` element consistently in IE.
  */
 
-main {
-    display: block;
-}
+/*main {*/
+/*    display: block;*/
+/*}*/
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
