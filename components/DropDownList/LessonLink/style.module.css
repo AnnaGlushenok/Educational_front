@@ -1,0 +1,13 @@
+.links {
+    padding-left: 50px;
+}
+
+.links__link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #00A110;
+}
+
+.links__link:hover {
+    color: var(--dark-green);
+}

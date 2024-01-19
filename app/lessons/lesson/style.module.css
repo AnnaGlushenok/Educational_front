@@ -1,0 +1,30 @@
+.title {
+    font-size: var(--caption-font-size);
+    font-weight: var(--caption-font-weight);
+    color: var(--dark-green);
+    margin-top: 0;
+    align-self: center;
+}
+
+.text {
+    margin: 7px;
+    text-align: justify;
+    font-size: var(--text-font-size);
+}
+
+.fact {
+    border-bottom: var(--main-green) solid 2px;
+    border-top: var(--main-green) solid 2px;
+    color: var(--main-green);
+    padding: 10px 0 10px 36px;
+    text-align: justify;
+}
+
+.formula {
+    text-align: center;
+    font-size: var(--text-font-size);
+}
+
+.img {
+    align-self: center;
+}
