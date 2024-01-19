@@ -1,6 +1,7 @@
 import {ListItem} from "@/interfaces/ListItem";
 import s from "../mainstyle.module.css";
 import {DropDownList} from "@/components/DropDownList";
+import {Cards} from "@/enum/Cards";
 
 export const metadata = {
     title: 'Уроки'
@@ -68,7 +69,7 @@ export default function Lessons() {
     ]
     return (
         <main className={s.main}>
-            {lessons.map(l => <DropDownList key={l.title.at(1)} listItem={l} type={"lesson"}/>)}
+            {lessons.map(l => <DropDownList key={l.title} listItem={l} type={Cards.LESSON}/>)}
         </main>
     )
 }

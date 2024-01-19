@@ -1,6 +1,7 @@
 import mainStyle from "@/app/mainstyle.module.css";
 import {DropDownList} from "@/components/DropDownList";
 import {ListItem} from "@/interfaces/ListItem";
+import {Cards} from "@/enum/Cards";
 
 export const metadata = {
     title: 'Задания'
@@ -52,7 +53,7 @@ export default function TasksPage() {
     return (
         <main className={mainStyle.main}>
             {tasks.map(t =>
-                <DropDownList key={t.title.at(1)} type="task" listItem={t}/>)}
+                <DropDownList key={t.title} type={Cards.TASK} listItem={t}/>)}
         </main>
     )
 }

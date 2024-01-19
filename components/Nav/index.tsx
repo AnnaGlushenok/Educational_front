@@ -2,7 +2,7 @@ import {NavItems} from "@/interfaces/NavItems";
 import s from "./style.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
+import img from "../../public/menu_logo.svg"
 
 export function Nav({items, btn}: { items: NavItems[], btn: NavItems }) {
     return (
@@ -10,18 +10,19 @@ export function Nav({items, btn}: { items: NavItems[], btn: NavItems }) {
             <div className={s.wrapper}>
                 <div className={`${s.items}`}>
                     <Image
+                        key={"menu"}
                         width={30}
                         height={30}
                         className={s.menu}
-                        src={"./menu_logo.svg"}
+                        src={img}
                         alt={"menu_logo"}/>
                     {items.map(i =>
-                        <div className={s.item} key={i.path}>
-                            <Link target="_blank" href={i.path}>{i.title}</Link>
+                        <div className={s.item} key={i.title}>
+                            <Link key={i.title.at(0)} target="_blank" href={i.path}>{i.title}</Link>
                         </div>)
-                    }
+                    }key
                 </div>
-                <Link href={btn.path} className={s.enterBtn}>{btn.title}</Link>
+                <Link key={btn.title} href={btn.path} className={s.enterBtn}>{btn.title}</Link>
             </div>
         </nav>
     );
