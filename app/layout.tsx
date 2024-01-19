@@ -9,6 +9,10 @@ const roboto = Roboto({subsets: ['latin', "cyrillic"], weight: '400'});
 export const metadata = {
     title: 'Главная',
     description: 'Химия Биология',
+    icons: {
+        icon: ["./lessons_logo.svg"],
+        shortcut:["./lessons_logo.svg"]
+    }
 }
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
