@@ -10,7 +10,7 @@ export default function Menu() {
         <main className={s.main}>
             <TaskCard title={"Уроки"} image={"./lessons_logo.svg"} path={"lessons"}/>
             <TaskCard title={"Задания"} image={"./task_logo.svg"} path={"tasks"}/>
-            <TaskCard title={"Контрольные"} image={"./task_logo.svg"} path={"control_work"}/>
+            <TaskCard title={"Контрольные"} image={"./task_logo.svg"} path={"control"}/>
         </main>
     )
 }
