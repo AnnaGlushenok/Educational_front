@@ -1,0 +1,11 @@
+.container__caption {
+    display: flex;
+    justify-content: center;
+}
+
+.caption {
+    font-size: var(--caption-font-size);
+    color: var(--dark-green);
+    font-weight: var(--caption-font-weight);
+    margin: 0;
+}
