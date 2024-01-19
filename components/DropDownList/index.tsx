@@ -3,11 +3,13 @@ import {useEffect, useRef, useState} from "react";
 import s from "./style.module.css";
 import Image from "next/image";
 import {ListItem} from "@/interfaces/ListItem";
+import {Cards} from "@/enum/Cards";
 import {LessonLink} from "./LessonLink";
-import {Excercise} from "./Excercise";
+import {HTMLText} from "./Excercise";
+import CheckBox from "@/components/CheckBox";
 
 interface DropDownList {
-    type: string,
+    type: Cards,
     listItem: ListItem
 }
 
@@ -29,14 +31,19 @@ export function DropDownList(list: DropDownList) {
             </div>
             {isActive && (
                 <div ref={block} className={s.container__block}>
-                    {
-                        list.type === "lesson" ?
-                            list.listItem.list.map(e => <LessonLink key={e.id} id={e.id} name={e.name}/>) :
-                            list.listItem.list.map(e => <Excercise key={e.id} id={e.id} name={e.name}/>)
-                    }
+                    {(() => {
+                        switch (list.type) {
+                            case Cards.LESSON:
+                                return list.listItem.list.map(e => <LessonLink key={e.id} id={e.id} name={e.name}/>);
+                            case Cards.TASK:
+                                return list.listItem.list.map(e => <HTMLText key={e.id} id={e.id} name={e.name}/>);
+                            // case Cards.CONTROL:
+                            //     return list.listItem.list.map(e => <CheckBox key={e.id} id={e.id} name={e.name}
+                            //                                                  onCheckboxChange={}/>);
+                        }
+                    })()}
                 </div>
-            )
-            }
+            )}
         </div>
     )
 }
