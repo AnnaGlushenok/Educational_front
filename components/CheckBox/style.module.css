@@ -1,0 +1,30 @@
+.check_box {
+    background: url("../../public/cross.svg") center center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    border: 1px var(--red) solid;
+}
+
+.text {
+    margin: 0;
+    font-size: var(--text-font-size);
+    color: var(--red);
+    user-select: none;
+}
+
+.hidden_checkbox:checked + .check_box {
+    background: url("../../public/done_arrow.svg") center center;
+    border: 1px var(--light-green) solid;
+}
+
+.hidden_checkbox:checked + .check_box + .text {
+    color: var(--light-green);
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
