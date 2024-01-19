@@ -20,7 +20,7 @@ export function Nav({items, btn}: { items: NavItems[], btn: NavItems }) {
                         <div className={s.item} key={i.title}>
                             <Link key={i.title.at(0)} target="_blank" href={i.path}>{i.title}</Link>
                         </div>)
-                    }key
+                    }
                 </div>
                 <Link key={btn.title} href={btn.path} className={s.enterBtn}>{btn.title}</Link>
             </div>

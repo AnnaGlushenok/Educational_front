@@ -1,5 +1,5 @@
 'use client'
-import s from "@/app/lessons/[lessonId]/style.module.css";
+import s from "./style.module.css";
 import mainStyle from "@/app/mainstyle.module.css";
 import {LessonItem} from "@/interfaces/LessonItem";
 import Image from "next/image";
