@@ -1,0 +1,1 @@
+export enum Cards {LESSON, TASK, CONTROL}
