@@ -4,7 +4,26 @@
     margin: 0 auto;
     width: min(1170px, 100vh);
     padding: 50px 10px;
-    /*background: aqua;*/
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.title {
+    text-align: center;
+    color: var(--dark-green);
+}
+
+.margin {
+    margin: auto;
+}
+
+.img {
+    width: 60vh;
+    height: auto;
 }
 
 @media screen and (min-width: 0) and (max-width: 768px) {
@@ -18,5 +37,10 @@
     .main {
         width: auto;
         padding: 15px 10px;
+    }
+
+    .img {
+        width: 30vh;
+        height: auto;
     }
 }
