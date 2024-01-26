@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({children}: { children: React.ReactNode }) {
     let links: NavItems[] = [
         {title: "Главная", path: "/"},
-        {title: "Об авторе", path: "/"},
+        {title: "Об авторе", path: "/about"},
         {title: "Задать вопрос", path: "/"}
     ]
     let btn = {title: "Войти", path: "/"};
