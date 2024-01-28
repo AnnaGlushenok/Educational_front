@@ -1,0 +1,16 @@
+.table_container {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    width: 570px;
+    height: 292px;
+    border-collapse: collapse;
+    border: 1px solid #000000;
+}
+
+.row, .cell {
+    border: 1px solid grey;
+    text-align: center;
+}

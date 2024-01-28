@@ -1,0 +1,39 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input {
+    width: 60vh;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-bottom: solid var(--main-green) 2px;
+    padding-left: 20px;
+}
+
+.input::placeholder {
+    color: var(--fuchsia);
+}
+
+.input:invalid {
+    border-bottom: solid var(--fuchsia) 2px;
+}
+
+.input:valid {
+    border-bottom: solid var(--light-green) 2px;
+}
+
+@media screen and (min-width: 0) and (max-width: 460px) {
+    .input {
+        width: 33vh;
+        height: 40px;
+        padding-left: 10px;
+    }
+
+    .input::placeholder {
+        font-size: 14px;
+    }
+}
