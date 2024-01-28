@@ -1,0 +1,13 @@
+.red {
+    background: var(--white);
+    color: var(--red);
+    box-shadow: 0 10px 20px rgba(82, 0, 29, 0.2);
+}
+
+.red:hover {
+    background: var(--light-green);
+    color: var(--white);
+    box-shadow: 0 10px 20px rgba(49, 222, 112, 0.7);
+    transform: translateY(-10px);
+    transition: 0.3s;
+}

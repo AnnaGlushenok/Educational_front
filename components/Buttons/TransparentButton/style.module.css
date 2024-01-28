@@ -1,0 +1,12 @@
+.transparent {
+    background: var(--white);
+    color: var(--main-green);
+    border: var(--main-green) solid 2px;
+    transition: 0.3s;
+}
+
+.transparent:hover {
+    background: var(--main-green);
+    color: var(--white);
+    transition: 0.3s;
+}

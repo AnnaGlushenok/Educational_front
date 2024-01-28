@@ -1,0 +1,13 @@
+.green {
+    filter: drop-shadow(0px 10px 20px rgba(0, 81, 76, 0.3));
+    background: var(--main-green);
+    color: var(--white);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.green:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+    margin: 0;
+}

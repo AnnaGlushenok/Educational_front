@@ -1,0 +1,25 @@
+.container__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 29px;
+}
+
+.button {
+    width: 220px;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+    font-size: var(--text-font-size);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media screen and (min-width: 0) and (max-width: 460px) {
+    .button {
+        width: 180px;
+        height: 50px;
+        border: none;
+        font-size: 14px;
+    }
+}
