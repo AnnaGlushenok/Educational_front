@@ -14,7 +14,7 @@ export default function Page() {
     let cards = [{
         id: 1,
         title: "Химия",
-        img: "./chemistry_logo.svg",
+        img: "./db/chemistry_logo.svg",
         imgAlt: "картинка",
         classes: [{
             id: 1,
@@ -37,7 +37,7 @@ export default function Page() {
         {
             id: 2,
             title: "Биология",
-            img: "./biology_logo.svg",
+            img: "./db/biology_logo.svg",
             imgAlt: "картинка",
             classes: [{
                 id: 1,

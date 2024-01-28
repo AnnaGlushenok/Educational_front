@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Химия Биология',
     icons: {
         icon: ["./lessons_logo.svg"],
-        shortcut:["./lessons_logo.svg"]
+        shortcut: ["./lessons_logo.svg"]
     }
 }
 
@@ -21,7 +21,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         {title: "Об авторе", path: "/about"},
         {title: "Задать вопрос", path: "/"}
     ]
-    let btn = {title: "Войти", path: "/"};
+    let btn = {title: "Войти", path: "/login"};
     return (
         <html lang="en">
         <body className={roboto.className}>
