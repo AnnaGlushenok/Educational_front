@@ -1,0 +1,1 @@
+export enum Questions {RADIO = "radio", CHECKBOX = "checkbox"}

@@ -1,0 +1,1 @@
+export enum Controls {TEXT, TABLE, IMG}
