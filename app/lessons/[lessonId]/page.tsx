@@ -3,6 +3,8 @@ import s from "./style.module.css";
 import mainStyle from "@/app/mainstyle.module.css";
 import {LessonItem} from "@/interfaces/LessonItem";
 import Image from "next/image";
+import React, {useState} from "react";
+import {WhiteButton} from "@/components/Buttons/WhiteButton";
 
 export default function Lesson({params}: any) {
     let lesson: LessonItem[] = [
@@ -80,6 +82,9 @@ export default function Lesson({params}: any) {
         }
     ]
 
+    let [isAuth, setIsAuth] = useState(true);
+    let [isExist, setIsExist] = useState(true);
+
     return (
         <main className={mainStyle.main}>
             <div>{params.lessonId}</div>
@@ -103,7 +108,10 @@ export default function Lesson({params}: any) {
                                 src={l.text}
                                 alt="reaction"/>
                     }
-                }) //возможно кнопка теста
+                })
+            }
+            {(isAuth && isExist) &&
+                <WhiteButton name={"Пройти тест"} onClick={() => console.log()}/>
             }
         </main>
     )

@@ -1,12 +1,12 @@
 "use client"
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import s from "./style.module.css";
 import Image from "next/image";
 import {ListItem} from "@/interfaces/ListItem";
 import {Cards} from "@/enum/Cards";
 import {LessonLink} from "./LessonLink";
 import {HTMLText} from "./Excercise";
-import CheckBox from "@/components/CheckBox";
+import {WhiteButton} from "@/components/Buttons/WhiteButton";
 
 interface DropDownList {
     type: Cards,
@@ -23,6 +23,9 @@ export function DropDownList(list: DropDownList) {
         setBlockHeight(isActive ? `100px` : '0px');
     }, [isActive]);
 
+    let [isAuth, setIsAuth] = useState(true);
+    let [isExist, setIsExist] = useState(true);
+
     return (
         <div>
             <div className={`${s.title} ${s.title__title} ${isActive ? s.title__active : ''}`} onClick={toggle}>
@@ -34,12 +37,24 @@ export function DropDownList(list: DropDownList) {
                     {(() => {
                         switch (list.type) {
                             case Cards.LESSON:
-                                return list.listItem.list.map(e => <LessonLink key={e.id} id={e.id} name={e.name}/>);
+                                return (
+                                    <div>
+                                        {list.listItem.list.map(e => <LessonLink key={e.id} id={e.id} name={e.name}/>)}
+                                        {(isAuth && isExist) &&
+                                            <WhiteButton name={"Пройти тест"} onClick={() => console.log()}/>
+                                        }
+                                    </div>
+                                );
                             case Cards.TASK:
-                                return list.listItem.list.map(e => <HTMLText key={e.id} id={e.id} name={e.name}/>);
-                            // case Cards.CONTROL:
-                            //     return list.listItem.list.map(e => <CheckBox key={e.id} id={e.id} name={e.name}
-                            //                                                  onCheckboxChange={}/>);
+                                return (
+                                    <ol>
+                                        {list.listItem.list.map(e =>
+                                            <li key={e.id}>
+                                                <HTMLText key={e.id} text={e.name}/>
+                                            </li>)
+                                        }
+                                    </ol>
+                                );
                         }
                     })()}
                 </div>

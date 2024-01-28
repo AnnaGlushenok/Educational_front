@@ -1,7 +1,5 @@
-import {StringItem} from "@/interfaces/StringItem";
-
-export function HTMLText(text: StringItem) {//заменить на просто string?
+export function HTMLText({text}: { text: string }) {
     return (
-        <p dangerouslySetInnerHTML={{__html: text.name}}></p>
+        <p dangerouslySetInnerHTML={{__html: text}}></p>
     )
 }
