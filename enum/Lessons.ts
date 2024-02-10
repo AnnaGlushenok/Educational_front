@@ -1,0 +1,1 @@
+export enum Lessons {IMAGE, TEXT, FORMULA, FACT}

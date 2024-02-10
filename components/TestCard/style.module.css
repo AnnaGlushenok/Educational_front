@@ -1,0 +1,63 @@
+.block__card {
+    width: 90%;
+    height: auto;
+    border: 1px solid #00514C;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.card__question_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.question_title__question {
+    width: 70%;
+    height: 20px;
+    outline: none;
+    border: none;
+    border-bottom: solid #00514C 2px;
+}
+
+.question_title__combobox {
+    height: 25px;
+    border: solid #00514C 1px;
+    width: 25%;
+}
+
+.questions__question {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.questions__add_btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.questions__img {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (min-width: 0) and (max-width: 460px) {
+    .block__card {
+        width: 80%;
+    }
+}

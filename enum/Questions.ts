@@ -1,1 +1,1 @@
-export enum Questions {RADIO = "radio", CHECKBOX = "checkbox"}
+export enum Questions {RADIO = "radio", CHECKBOX = "checkbox", TEXTBOX = "textbox"}

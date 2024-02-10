@@ -1,0 +1,30 @@
+.block {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 10px 0 10px;
+}
+
+.content {
+    width: min(1170px, 100vh);;
+    resize: both;
+    min-height: 40px;
+    border: black solid 1px;
+    padding: 10px;
+}
+
+.content:focus {
+    border-color: var(--light-green);
+    outline: none;
+}
+
+.button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

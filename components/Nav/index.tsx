@@ -4,7 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import img from "../../public/menu_logo.svg"
 
-export function Nav({items, btn}: { items: NavItems[], btn: NavItems }) {// target="_blank"
+export function Nav({items, btn}: {
+    items: NavItems[],
+    btn: NavItems
+}) {// target="_blank"
     return (
         <nav className={s.navbar}>
             <div className={s.wrapper}>
@@ -18,7 +21,7 @@ export function Nav({items, btn}: { items: NavItems[], btn: NavItems }) {// targ
                         alt={"menu_logo"}/>
                     {items.map(i =>
                         <div className={s.item} key={i.title}>
-                            <Link key={i.title.at(0)} href={i.path}>{i.title}</Link>
+                            <Link key={i.title} href={i.path}>{i.title}</Link>
                         </div>)
                     }
                 </div>

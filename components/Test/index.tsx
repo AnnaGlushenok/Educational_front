@@ -6,6 +6,23 @@ import TestController from "@/api/testController";
 import Items from "@/components/CheckBox";
 import {StringItem} from "@/interfaces/StringItem";
 
+export let mark = 0
+
+export function addMark(answers: StringItem[], correctAnswers: string[]) {
+    if (answers.length == 1 && correctAnswers[0] == answers[0].name) {
+        mark += 1
+    } else {
+        let countCorrectAnswers = 0;
+        mark += 1;
+        for (const answer of answers)
+            if (correctAnswers.includes(answer.name))
+                countCorrectAnswers += correctAnswers.length
+// TODO
+        //должно работать
+        mark -= Math.abs(correctAnswers.length - countCorrectAnswers) / correctAnswers.length;
+    }
+}
+
 export function Test() {
     const [index, setIndex] = useState(-1);
     const [selectedItems, setSelectedItems] = useState<StringItem[]>([]);
@@ -25,6 +42,7 @@ export function Test() {
 
     const handleNextQuestion = () => {
         setIndex(index + 1)
+        addMark(selectedItems, questions[index].correctAnswers)
         if (index == questions.length - 1)
             setTotalSeconds(Math.floor((new Date().getTime() - startTime) / 1000))
     };
@@ -49,7 +67,7 @@ export function Test() {
                     <p className={s.card__title}>Тест</p>
                     <p className={s.card__question_caption}>{resp.name}</p>
                     <p className={s.card__title}>Оценка:</p>
-                    <p className={s.card__mark}>9</p>
+                    <p className={s.card__mark}>{(mark * 10) / questions.length}</p>
                     <div className={s.datetime}>
                         <div className={s.datetime__left_block}>
                             <p className={s.datetime__text}>Дата:<br/>Время выполнения:</p>

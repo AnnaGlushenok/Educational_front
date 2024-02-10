@@ -1,0 +1,44 @@
+.main__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.title {
+    margin: 0;
+    font-size: 26px;
+    color: #002B2B;
+    white-space: nowrap;
+    white-space: pre;
+}
+
+.text {
+    width: 100%;
+    font-size: 20px;
+}
+
+.text:focus {
+    border-color: var(--light-green);
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button {
+    width: 180px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    font-size: var(--text-font-size);
+    background: var(--main-green);
+    color: var(--white);
+    cursor: pointer;
+}
