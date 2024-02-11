@@ -7,7 +7,7 @@
 }
 
 .content {
-    width: min(1170px, 100vh);;
+    width: min(1170px, 100vh);
     resize: both;
     min-height: 40px;
     border: black solid 1px;

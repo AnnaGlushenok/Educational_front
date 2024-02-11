@@ -4,6 +4,7 @@ import React, {ChangeEvent, useState} from "react";
 import {TextInputBlock} from "@/components/TextInputBlock";
 import {Questions} from "@/enum/Questions";
 import {Lessons} from "@/enum/Lessons";
+import {ContentItem} from "@/interfaces/ContentItem";
 
 interface BlockItem {
     id: number,
@@ -14,10 +15,12 @@ interface BlockItem {
 export function TeacherLesson() {
     const [titleName, setTitleName] = useState("")
     const [blocks, setBlocks] = useState<BlockItem[]>([]);
+    const [contents, setContents] = useState<ContentItem[]>([]);
 
     let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setTitleName(e.target.value)
     }
+
     let handleImageClick = () => {
         const newBlock = {
             id: blocks.length + 1,
@@ -52,10 +55,18 @@ export function TeacherLesson() {
         setBlocks([...blocks, newBlock]);
     }
     let handleSaveClick = () => {
-        console.log(blocks)
+        console.log('title', titleName);
+        console.log('content', contents);
     }
+
+    const handleContentChange = (content: ContentItem) => {
+        let el = [...contents].find(c => c.id == content.id)
+        el != null ? contents[el.id - 1] = content : setContents([...contents, content])
+    };
+
     let handleDeleteBlock = (index: number) => {
         setBlocks([...blocks].filter(b => b.id != index));
+        setContents([...contents].filter(c => c.id != index))
     };
 
     return (
@@ -67,7 +78,9 @@ export function TeacherLesson() {
             </div>
             {blocks.map(block => (
                 <TextInputBlock key={block.id}
+                                id={block.id}
                                 onDelete={() => handleDeleteBlock(block.id)}
+                                onContentChange={handleContentChange}
                                 role={block.role}
                                 type={block.type}/>
             ))}
