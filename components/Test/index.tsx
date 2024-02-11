@@ -28,7 +28,7 @@ export function addMark(answers: StringItem[], correctAnswers: string[], countAn
     }
 }
 
-export function Test(answers: StringItem[], correctAnswers: string[]) {
+export function Test() {
     const [index, setIndex] = useState(-1);
     const [selectedItems, setSelectedItems] = useState<StringItem[]>([]);
     const [startTime, setStartTime] = useState(new Date().getTime());

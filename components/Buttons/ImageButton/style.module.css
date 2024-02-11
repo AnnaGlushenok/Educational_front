@@ -1,0 +1,9 @@
+.questions__add_btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -1,5 +1,5 @@
 export function TeacherTask() {
     return (
-        <div></div>
+        <div>TeacherTask</div>
     )
 }
