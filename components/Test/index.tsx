@@ -8,22 +8,27 @@ import {StringItem} from "@/interfaces/StringItem";
 
 export let mark = 0
 
-export function addMark(answers: StringItem[], correctAnswers: string[]) {
-    if (answers.length == 1 && correctAnswers[0] == answers[0].name) {
-        mark += 1
+//В BLL
+export function addMark(answers: StringItem[], correctAnswers: string[], countAnswers: number) {
+    if (answers.length == 1 && correctAnswers.length == 1) {
+        if (correctAnswers.includes(answers[0].name))
+            mark += 1
     } else {
-        let countCorrectAnswers = 0;
-        mark += 1;
+        let countCorrectAnswers = 0, countWrongAnswers = 0;
         for (const answer of answers)
             if (correctAnswers.includes(answer.name))
-                countCorrectAnswers += correctAnswers.length
-// TODO
-        //должно работать
-        mark -= Math.abs(correctAnswers.length - countCorrectAnswers) / correctAnswers.length;
+                countCorrectAnswers += 1
+            else
+                countWrongAnswers += 1
+
+        if (countCorrectAnswers != 0) {
+            let a = countWrongAnswers / countAnswers;
+            mark += countCorrectAnswers / correctAnswers.length - countWrongAnswers / countAnswers;
+        }
     }
 }
 
-export function Test() {
+export function Test(answers: StringItem[], correctAnswers: string[]) {
     const [index, setIndex] = useState(-1);
     const [selectedItems, setSelectedItems] = useState<StringItem[]>([]);
     const [startTime, setStartTime] = useState(new Date().getTime());
@@ -42,7 +47,7 @@ export function Test() {
 
     const handleNextQuestion = () => {
         setIndex(index + 1)
-        addMark(selectedItems, questions[index].correctAnswers)
+        addMark(selectedItems, questions[index].correctAnswers, questions[index].answers.length)
         if (index == questions.length - 1)
             setTotalSeconds(Math.floor((new Date().getTime() - startTime) / 1000))
     };
