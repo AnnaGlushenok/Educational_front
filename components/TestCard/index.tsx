@@ -2,27 +2,47 @@
 import {GreenButton} from "@/components/Buttons/GreenButton";
 import React, {useState} from "react";
 import {TestBlock} from "@/components/TestBlock";
-
-interface TestItem {
-    id: number
-}
+import {TestItem} from "@/interfaces/TestItem";
+import {Questions} from "@/enum/Questions";
 
 export function TestCard() {
     const [blocks, setBlocks] = useState<TestItem[]>([]);
+    const [blockCount, setBlockCount] = useState(0)
+    const [contents, setContents] = useState<TestItem[]>([]);
+
     let handleAddBlock = () => {
+        setBlockCount(blockCount + 1)
         let block = {
-            id: blocks.length + 1,
+            id: blockCount,
+            question: "",
+            type: Questions.RADIO,
+            answers: [],
+            correctAnswers: []
         }
         setBlocks([...blocks, block]);
     }
-    // TODO добавь удаление блока
+    const handleContentChange = (content: TestItem) => {
+        let el = [...contents].find(c => c.id == content.id)
+        // console.log("el", el);
+        el != null ? contents[el.id] = content : setContents([...contents, content])
+    };
+    let handleSaveClick = () => {
+        console.log('content', contents);
+    }
+    let handleDeleteBlock = (index: number) => {
+        setBlocks([...blocks].filter(b => b.id != index));
+    };
+
     return (
         <div>
-            <TestBlock/>
-            {blocks.map(b => <TestBlock/>)}
+            {blocks.map(block =>
+                <TestBlock key={block.id}
+                           id={block.id}
+                           onContentChange={handleContentChange}
+                           onDelete={() => handleDeleteBlock(block.id)}
+                />)}
             <GreenButton name={"Добавить"} onClick={handleAddBlock}/>
-            <GreenButton name={"Сохранить"} onClick={() => {
-            }}/>
+            <GreenButton name={"Сохранить"} onClick={handleSaveClick}/>
         </div>
     )
 }

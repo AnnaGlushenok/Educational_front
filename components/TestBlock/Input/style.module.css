@@ -1,0 +1,13 @@
+.questions__question {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.question {
+    width: 95%;
+    height: 20px;
+    outline: none;
+    border: none;
+    border-bottom: solid var(--main-green) 2px;
+}

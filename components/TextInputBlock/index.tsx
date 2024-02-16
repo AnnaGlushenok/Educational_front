@@ -4,6 +4,7 @@ import Image from "next/image";
 import {Questions} from "@/enum/Questions";
 import {Lessons} from "@/enum/Lessons";
 import {ContentItem} from "@/interfaces/ContentItem";
+import {ImageButton} from "@/components/Buttons/ImageButton";
 
 export function TextInputBlock({id, role, type, onDelete, onContentChange}: {
     id: number,
@@ -25,12 +26,7 @@ export function TextInputBlock({id, role, type, onDelete, onContentChange}: {
             {/*<span id={type} role={type} className={s.content}*/}
             {/*      onInput={handleChange}*/}
             {/*      contentEditable="true"></span>*/}
-            <button className={s.button} onClick={onDelete}>
-                <Image width={30}
-                       height={30}
-                       src={"../cross_teacher.svg"}
-                       alt={"cross"}/>
-            </button>
+            <ImageButton name={"../cross_teacher.svg"} onClick={onDelete}/>
         </div>
     )
 }

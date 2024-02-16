@@ -16,14 +16,14 @@ export function TeacherLesson() {
     const [titleName, setTitleName] = useState("")
     const [blocks, setBlocks] = useState<BlockItem[]>([]);
     const [contents, setContents] = useState<ContentItem[]>([]);
+    const [blockCount, setBlockCount] = useState(0)
 
-    let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setTitleName(e.target.value)
-    }
+    let handleChange = (e: ChangeEvent<HTMLInputElement>) => setTitleName(e.target.value)
 
     let handleImageClick = () => {
+        setBlockCount(blockCount + 1)
         const newBlock = {
-            id: blocks.length + 1,
+            id: blockCount,
             role: Lessons.IMAGE,
             type: Questions.TEXTBOX
         };
@@ -31,24 +31,27 @@ export function TeacherLesson() {
         setBlocks([...blocks, newBlock]);
     }
     let handleTextClick = () => {
+        setBlockCount(blockCount + 1)
         const newBlock = {
-            id: blocks.length + 1,
+            id: blockCount,
             role: Lessons.TEXT,
             type: Questions.TEXTBOX
         };
         setBlocks([...blocks, newBlock]);
     }
     let handleFactClick = () => {
+        setBlockCount(blockCount + 1)
         const newBlock = {
-            id: blocks.length + 1,
+            id: blockCount,
             role: Lessons.FACT,
             type: Questions.TEXTBOX
         };
         setBlocks([...blocks, newBlock]);
     }
     let handleFormulaClick = () => {
+        setBlockCount(blockCount + 1)
         const newBlock = {
-            id: blocks.length + 1,
+            id: blockCount,
             role: Lessons.FORMULA,
             type: Questions.TEXTBOX
         };
