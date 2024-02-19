@@ -8,7 +8,6 @@ import {Questions} from "@/enum/Questions";
 export function TestCard() {
     const [blocks, setBlocks] = useState<TestItem[]>([]);
     const [blockCount, setBlockCount] = useState(0)
-    const [contents, setContents] = useState<TestItem[]>([]);
 
     let handleAddBlock = () => {
         setBlockCount(blockCount + 1)
@@ -22,16 +21,17 @@ export function TestCard() {
         setBlocks([...blocks, block]);
     }
     const handleContentChange = (content: TestItem) => {
-        let el = [...contents].find(c => c.id == content.id)
-        // console.log("el", el);
-        el != null ? contents[el.id] = content : setContents([...contents, content])
+        console.log("content", content);
+        let index = blocks.findIndex(b => content.id === b.id);
+        if (index !== -1)
+            blocks[index] = content;
     };
+
     let handleSaveClick = () => {
-        console.log('content', contents);
+        console.log('content', blocks);
     }
-    let handleDeleteBlock = (index: number) => {
-        setBlocks([...blocks].filter(b => b.id != index));
-    };
+
+    let handleDeleteBlock = (index: number) => setBlocks([...blocks].filter(b => b.id != index));
 
     return (
         <div>
